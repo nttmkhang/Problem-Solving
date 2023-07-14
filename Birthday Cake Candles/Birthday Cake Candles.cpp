@@ -1,20 +1,98 @@
-// Birthday Cake Candles.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <bits/stdc++.h>
 
-#include <iostream>
+using namespace std;
+
+string ltrim(const string&);
+string rtrim(const string&);
+vector<string> split(const string&);
+
+/*
+ * Complete the 'birthdayCakeCandles' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY candles as parameter.
+ */
+
+int birthdayCakeCandles(vector<int> candles) {
+    map<int, int> mp;
+    int lc = candles[0];
+    mp[lc]++;
+    int size = candles.size();
+    for (int i = 1; i < size; i++)
+    {
+        mp[candles[i]]++;
+        if (candles[i] > lc)
+            lc = candles[i];
+    }
+    return mp[lc];
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string candles_count_temp;
+    getline(cin, candles_count_temp);
+
+    int candles_count = stoi(ltrim(rtrim(candles_count_temp)));
+
+    string candles_temp_temp;
+    getline(cin, candles_temp_temp);
+
+    vector<string> candles_temp = split(rtrim(candles_temp_temp));
+
+    vector<int> candles(candles_count);
+
+    for (int i = 0; i < candles_count; i++) {
+        int candles_item = stoi(candles_temp[i]);
+
+        candles[i] = candles_item;
+    }
+
+    int result = birthdayCakeCandles(candles);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+string ltrim(const string& str) {
+    string s(str);
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
+    );
+
+    return s;
+}
+
+string rtrim(const string& str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end()
+    );
+
+    return s;
+}
+
+vector<string> split(const string& str) {
+    vector<string> tokens;
+
+    string::size_type start = 0;
+    string::size_type end = 0;
+
+    while ((end = str.find(" ", start)) != string::npos) {
+        tokens.push_back(str.substr(start, end - start));
+
+        start = end + 1;
+    }
+
+    tokens.push_back(str.substr(start));
+
+    return tokens;
+}
