@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03 - Compare the Triplets",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "09 - Birthday Cake Candles", "09 - Birthday Cake Candles\09 - Birthday Cake Candles.vcxproj", "{07B96E9D-B3F5-4B2B-B0FF-390ABD6BB8AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "07 - Staircase", "07 - Staircase\07 - Staircase.vcxproj", "{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{07B96E9D-B3F5-4B2B-B0FF-390ABD6BB8AA}.Release|x64.Build.0 = Release|x64
 		{07B96E9D-B3F5-4B2B-B0FF-390ABD6BB8AA}.Release|x86.ActiveCfg = Release|Win32
 		{07B96E9D-B3F5-4B2B-B0FF-390ABD6BB8AA}.Release|x86.Build.0 = Release|Win32
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Debug|x64.ActiveCfg = Debug|x64
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Debug|x64.Build.0 = Debug|x64
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Debug|x86.ActiveCfg = Debug|Win32
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Debug|x86.Build.0 = Debug|Win32
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Release|x64.ActiveCfg = Release|x64
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Release|x64.Build.0 = Release|x64
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Release|x86.ActiveCfg = Release|Win32
+		{1884E5F3-29D1-4ABA-9F3D-353F87A6B314}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
