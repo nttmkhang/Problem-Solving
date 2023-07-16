@@ -3,9 +3,8 @@
 #include <fstream>
 using namespace std;
 
-
-
-int toInt(char ch) {
+int toInt(char ch)
+{
     return int(ch - '0');
 }
 
@@ -33,7 +32,7 @@ string timeConversion(string s) {
             temp += to_string(hour);
         }
     }
-    
+
     for (int i = 2; i <= 7; i++)
         temp.push_back(s[i]);
     return temp;
@@ -45,6 +44,5 @@ int main()
     cin >> time;
     time = timeConversion(time);
     cout << time;
-
     return 0;
 }
